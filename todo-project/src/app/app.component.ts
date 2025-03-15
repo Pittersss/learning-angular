@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TodoItem } from './components/todo_item/TodoItem';
-import { TodoList } from './components/todo_list/TodoList';
+import { TodoItemService } from './services/todoitem.services';
+import { TodoListService } from './services/todolist.services';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ import { TodoList } from './components/todo_list/TodoList';
 })
 export class AppComponent {
   title = 'landing-page';
-  list = new TodoList("Pedro", [new TodoItem('Estudar Grafos', true), new TodoItem('Estudar TC')])
+  list = new TodoListService("Pedro", [new TodoItemService('Estudar Grafos', true), new TodoItemService('Estudar TC')])
   get username()
   {
     return this.list.user
