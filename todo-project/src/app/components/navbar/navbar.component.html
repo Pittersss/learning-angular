@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <div class="navbar__logo">Controle Financeiro</div>
+  
+    <div class="navbar__links">
+      <app-theme-toggle></app-theme-toggle>
+      <a href="/" class="navbar__link">Home</a>
+      <a href="/login" class="navbar__link">Login</a>
+    </div>
+  
+    <button class="navbar__toggle" (click)="toggleMenu()">&#9776;</button>
+  
+    @if(isMenuOpen){
+    <div class="navbar__menu">
+      <a href="/" class="navbar__menu-link">Home</a>
+      <a href="/login" class="navbar__menu-link">Login</a>
+    </div>
+    }
+  </nav>
