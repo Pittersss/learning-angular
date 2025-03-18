@@ -2,4 +2,7 @@
     {{ username }}'s To Do List
     <h6>Tarefas feitas: {{ itemCount }} </h6>
     <h6>Tarefas: {{ tasks }} </h6>
-  </h3>
+    <h6>Adicionar Tarefa:</h6>
+    <input type="text" [(ngModel)]="todoListControl">
+    <button name="adicionarBtn" (click)="buttomClicked($event)">Adicionar</button>
+</h3>

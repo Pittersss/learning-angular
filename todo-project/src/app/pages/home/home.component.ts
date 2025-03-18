@@ -1,10 +1,11 @@
 import { Component } from "@angular/core";
 import { TodoItemService } from "../../services/todoitem.services";
 import { TodoListService } from '../../services/todolist.services';
+import { FormControl, FormsModule } from "@angular/forms"
 
 @Component({
     selector: 'app-home',
-    imports: [],
+    imports: [FormsModule],
     standalone: true,
     templateUrl: './home.component.html',
     styleUrl: './home.component.css'
@@ -12,7 +13,9 @@ import { TodoListService } from '../../services/todolist.services';
 
 export class HomeComponent
 {
+      todoListControl: string = '';
       list = new TodoListService("Pedro", [new TodoItemService('Estudar Grafos', true), new TodoItemService('Estudar TC')])
+
       get username()
       {
         return this.list.user
@@ -37,6 +40,12 @@ export class HomeComponent
           
         }
         return my_tasks
+      }
+      
+      buttomClicked(event: Event)
+      {
         
+        this.list.addItem(this.todoListControl)
+        this.todoListControl = ''
       }
 }
